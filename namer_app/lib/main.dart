@@ -44,21 +44,23 @@ class MyHomePage extends StatelessWidget {
     var pair = appState.current;
 
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center, //assign to column center
-        children: [
-          Text('A random AWESOME idea:'),
-          BigCard(pair: pair),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, //assign to column center
+          children: [
+            Text('A random AWESOME idea:'),
+            BigCard(pair: pair),
 
-          // ↓ Add this.
-          ElevatedButton(
-            onPressed: () {
-              print('button pressed!');
-              appState.getNext();
-            },
-            child: Text('Next'),
-          ),
-        ],
+            // ↓ Add this.
+            ElevatedButton(
+              onPressed: () {
+                print('button pressed!');
+                appState.getNext();
+              },
+              child: Text('Next'),
+            ),
+          ],
+        ),
       ),
     );
   }
